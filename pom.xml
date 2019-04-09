@@ -54,7 +54,7 @@
                     <programs>
                         <program>
                             <!-- 启动类 -->
-                            <mainClass>CommandLineUtil</mainClass>
+                            <mainClass>com.jvm.ch01.CommandLineUtil</mainClass>
                             <jvmSettings>
                                 <extraArguments>
                                     <extraArgument>-server</extraArgument>
