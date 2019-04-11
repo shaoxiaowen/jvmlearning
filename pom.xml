@@ -54,7 +54,7 @@
                     <programs>
                         <program>
                             <!-- 启动类 -->
-                            <mainClass>com.jvm.ch01.Main</mainClass>
+                            <mainClass>com.jvm.ch02.Main</mainClass>
                             <jvmSettings>
                                 <extraArguments>
                                     <extraArgument>-server</extraArgument>
@@ -64,6 +64,14 @@
                             </jvmSettings>
                         </program>
                     </programs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
