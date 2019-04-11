@@ -22,15 +22,12 @@ public class Args {
         Args args=new Args();
         CommandLine commandLine=null;
         CommandLineParser parser=new DefaultParser();
-        //用来打印帮助信息
-//        HelpFormatter hf=new HelpFormatter();
-//        hf.setWidth(110);
+
         try {
             commandLine=parser.parse(options,argv);
             args.ok=true;
             if(commandLine.hasOption("h")||commandLine.hasOption("help")){
                 args.helpFlag=true;
-//                hf.printHelp("testApp",options,true);
             }
             else if(commandLine.hasOption("v")||commandLine.hasOption("version")){
                 args.versionFlag=true;
