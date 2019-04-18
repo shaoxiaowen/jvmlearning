@@ -1,9 +1,7 @@
-package com.jvm.ch02;
+package com.jvm.ch03;
 
-import com.jvm.ch02.classpath.Classpath;
-
-import java.io.File;
-import java.util.Arrays;
+import com.jvm.ch03.classfile.ClassFile;
+import com.jvm.ch03.Classpath.Classpath;
 
 /**
  * @description: TODO
@@ -16,7 +14,8 @@ public class Main {
 //            System.out.println(i+":"+argv[i]);
 //        }
 
-        String[] arr={"-Xjre","/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre","java.lang.Object"};
+//        String[] arr={"-Xjre","/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre","java.lang.Object"};
+        String[] arr={"-cp","/Users/shaoxiaowen/Desktop/JavaCode/javabasiclearning/target/classes","ClassFileTest"};
 
         Args args = Args.parse(arr);
         if (!args.ok || args.helpFlag) {
@@ -35,9 +34,24 @@ public class Main {
         String className=args.getMainClass().replace(".","/");
         try {
             byte[] classData = cp.readClass(className);
-            System.out.println("class data:"+Arrays.toString(classData));
+//            printClassData(classData);
+            ClassFile cf=new ClassFile(classData);
+            cf.showConstantPool();
         } catch (Exception e) {
             System.out.println("Cloud not find or load main class"+args.getMainClass());
+        }
+    }
+
+    private static void printClassData(byte[] classData){
+        for(int i=0;i<classData.length;i++){
+            byte b=classData[i];
+            int value=b&0xFF;
+            String strHex=Integer.toHexString(value);
+            //用两个字节表示16进制
+            if(strHex.length()<2){
+                strHex="0"+strHex;
+            }
+            System.out.print(strHex+",");
         }
     }
 

@@ -31,8 +31,8 @@ public class Args {
             }
             else if(commandLine.hasOption("v")||commandLine.hasOption("version")){
                 args.versionFlag=true;
-            }else if(commandLine.hasOption("cp")||commandLine.hasOption("classpath")){
-                args.classpath=commandLine.getOptionValue("cp")==null?commandLine.getOptionValue("cp"):commandLine.getOptionValue("classpath");
+            }else if(commandLine.hasOption("cp")||commandLine.hasOption("Classpath")){
+                args.classpath=commandLine.getOptionValue("cp")==null?commandLine.getOptionValue("cp"):commandLine.getOptionValue("Classpath");
             }
         } catch (ParseException e) {
             e.printStackTrace();
@@ -56,7 +56,7 @@ public class Args {
         opt_version.setRequired(false);
         options.addOption(opt_version);
 
-        Option opt_classpath=new Option("cp","classpath",true,"classpath");
+        Option opt_classpath=new Option("cp","Classpath",true,"Classpath");
         opt_classpath.setRequired(false);
         options.addOption(opt_classpath);
         return options;
@@ -66,7 +66,7 @@ public class Args {
         return "Args{" +
                 "helpFlag=" + helpFlag +
                 ", versionFlag=" + versionFlag +
-                ", classpath='" + classpath + '\'' +
+                ", Classpath='" + classpath + '\'' +
                 ", ok=" + ok +
                 '}';
     }
