@@ -13,7 +13,6 @@ public class Args {
     boolean helpFlag=false;
     boolean versionFlag=false;
     String classpath;
-    List<String> mainClassAndArgs;
     boolean ok;
 
     //解析参数
