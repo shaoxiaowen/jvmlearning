@@ -5,7 +5,7 @@ import org.apache.commons.cli.*;
 import java.util.List;
 
 /**
- * @description: TODO
+ * @description:
  * @author: xiaowen
  * @create: 2019-04-11 09:33
  **/
@@ -16,6 +16,7 @@ public class Args {
     String jre;
     List<String> mainClassAndArgs;
     boolean ok;
+
 
     //解析参数
     public static Args parse(String[] argv) {
